@@ -1,5 +1,6 @@
 //Mouse action-Drag and Drop
 
+//Action Class in Selenium is a built-in feature provided by the selenium for handling keyboard and mouse events. It includes various operations such as multiple events clicking by control key, drag and drop events and many more
 package mouseactions;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;

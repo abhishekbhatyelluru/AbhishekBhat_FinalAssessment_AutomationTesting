@@ -1,3 +1,5 @@
+//Cucumber framework in Selenium allows test scenarios to be written using natural language constructs that describe the expected behavior of the software for a given scenario, making it ideal for user acceptance testing.
+
 package stepdefinations;
 
 import java.util.concurrent.TimeUnit;

@@ -1,3 +1,5 @@
+//An Alert in Selenium is a small message box which appears on screen to give the user some information or notification
+
 package alerts;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;

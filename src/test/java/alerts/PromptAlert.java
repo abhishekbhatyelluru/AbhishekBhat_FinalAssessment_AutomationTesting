@@ -1,4 +1,7 @@
 //Prompt Alert
+
+//An Alert in Selenium is a small message box which appears on screen to give the user some information or notification
+
 package alerts;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.Alert;

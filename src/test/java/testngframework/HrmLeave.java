@@ -1,3 +1,4 @@
+//TestNG is an automation testing framework in which NG stands for “Next Generation”. TestNG is inspired by JUnit which uses the annotations (@)
 
 package testngframework;
 import org.testng.annotations.Test;

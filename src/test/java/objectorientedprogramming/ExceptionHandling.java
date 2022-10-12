@@ -1,3 +1,6 @@
+//The Exception Handling in Java is one of the powerful mechanism to handle the runtime errors so that the normal flow of the application can be maintained.
+
+//In Java, an exception is an event that disrupts the normal flow of the program. It is an object which is thrown at runtime
 package objectorientedprogramming;
 
 public class ExceptionHandling {
@@ -24,8 +27,8 @@ public class ExceptionHandling {
 		// If we have two catch then it will print one at a time
 
 	}
-
+	//We have both exception together..but it will print only arithmatic error
 }
-//We have both exception together..but it will print only arithmatic error
+
 
 

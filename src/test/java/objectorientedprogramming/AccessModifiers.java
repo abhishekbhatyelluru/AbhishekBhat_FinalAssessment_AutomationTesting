@@ -1,8 +1,9 @@
+//The access modifiers
+//The access modifiers in Java specifies the accessibility or scope of a field, method, constructor, or class
 package objectorientedprogramming;
-
 class carss
 {
-	private int carno=123;
+	private int carno=123; //initializing the private variable
 	private void detailscar()     //private-only accessible inside the class
 	{
 		System.out.println("Engine no is 325");

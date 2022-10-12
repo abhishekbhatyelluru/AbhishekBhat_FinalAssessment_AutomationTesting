@@ -8,16 +8,15 @@ public class SimpleAlert {
 
 	public static void main(String[] args) throws InterruptedException {
 		
-		System.setProperty("webdriver.chrome.driver", "C:\\Abhishek\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Abhishek\\chromedriver.exe");  //Calling the webdriver
 	    WebDriver driver = new ChromeDriver();
 	    
-		  driver.get("https://netbanking.hdfcbank.com/netbanking/");
-		  driver.switchTo().frame("login_page");
-		  driver.findElement(By.linkText("CONTINUE")).click();
-		  Alert simpleAlert=driver.switchTo().alert();
+		  driver.get("https://netbanking.hdfcbank.com/netbanking/"); // Opening the application in chrome
+		  driver.switchTo().frame("login_page");  //switch to the frame
+		  driver.findElement(By.linkText("CONTINUE")).click();  //Finding the element using xpath
+		  Alert simpleAlert=driver.switchTo().alert();   //switching to alert window using alert function
 		  Thread.sleep(1000);
-		  simpleAlert.accept();
-	
+		  simpleAlert.accept(); //accepting the command in alert window
 	}
 
 }

@@ -12,17 +12,17 @@ public class MouseDragdrop {
 
 	public static void main(String[] args) throws InterruptedException {
 		
-	       System.setProperty("webdriver.chrome.driver", "C:\\Abhishek\\chromedriver.exe");
-	       WebDriver driver = new ChromeDriver();
-	       driver.get("http://www.jqueryui.com/droppable/");
-	       Actions mouse= new Actions(driver);
-           driver.manage().window().maximize();
-           driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-           driver.switchTo().frame(0);
-           WebElement drag=driver.findElement(By.id("draggable"));
-           WebElement drop=driver.findElement(By.id("droppable"));
-           mouse.dragAndDrop(drag,drop).perform();
-           Thread.sleep(3000);
+		   System.setProperty("webdriver.chrome.driver", "C:\\Abhishek\\chromedriver.exe");
+	       WebDriver driver = new ChromeDriver();   //Calling the webdriver
+	       driver.get("http://www.jqueryui.com/droppable/"); // Opening the application in chrome
+	       Actions mouse= new Actions(driver); //Actions is function
+        driver.manage().window().maximize(); //maximizing the chrome window
+        driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS); //Adding the delay
+        driver.switchTo().frame(0); //Switching to the frame
+        WebElement drag=driver.findElement(By.id("draggable")); //Drag the function
+        WebElement drop=driver.findElement(By.id("droppable")); //Drop the function
+        mouse.dragAndDrop(drag,drop).perform(); //using draganddrop function move the element
+        Thread.sleep(3000); //adding thread delay
 
 	}
 

@@ -14,7 +14,7 @@ import io.cucumber.java.en.When;
 
 public class HrmLogin {
 
-	private static WebDriver driver = null;
+	private static WebDriver driver = null;//initializing a chrome driver
 
 		
 	@Given("browser is open and application is in login page")
@@ -22,28 +22,28 @@ public class HrmLogin {
 	{
 	 
 		System.setProperty("webdriver.chrome.driver", "C:\\Abhishek\\chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);	
-		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		driver = new ChromeDriver();//Calling the webdriver
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);	//Adding the time delay
+		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");// Opening the application in chrome
 	    
 	}
 
 	@When("user enters user name and password")
 	public void user_enters_user_name_and_password() 
 	{
-		driver.manage().timeouts().implicitlyWait(1000, TimeUnit.MILLISECONDS);
-		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("Admin");    
-        driver.findElement(By.xpath("//input[@type='password']")).sendKeys("admin123");
-        driver.findElement(By.xpath("//button[@type='submit']")).click();
+		driver.manage().timeouts().implicitlyWait(1000, TimeUnit.MILLISECONDS);//Adding the time delay
+		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("Admin");    //Entering the username
+        driver.findElement(By.xpath("//input[@type='password']")).sendKeys("admin123");//Entering the password
+        driver.findElement(By.xpath("//button[@type='submit']")).click();//Clicking on the submit button
 
 	}
 	@Then("home page is displayed")
 	public void home_page_is_displayed() 
 	{
-		String actualresult, expectedresult;
-	    expectedresult="PIM";
-	    actualresult=driver.findElement(By.xpath("//img[@alt='client brand banner']")).getText();
-	    SoftAssert soft= new SoftAssert();
+		String actualresult, expectedresult; //initializing the variables
+	    expectedresult="PIM"; //set the expected result
+	    actualresult=driver.findElement(By.xpath("//img[@alt='client brand banner']")).getText(); //Extract the text from web element
+	    SoftAssert soft= new SoftAssert(); //Iniatilizing the soft assert function
 		soft.assertEquals(actualresult, expectedresult);
 	}
 	
@@ -52,32 +52,32 @@ public class HrmLogin {
 	@Then("apply on leave")
 	public void apply_on_leave() throws InterruptedException 
 	{
-		    driver.findElement(By.linkText("Leave")).click();
-		    driver.findElement(By.linkText("Apply")).click();
-		    driver.findElement(By.xpath("//div[@class='oxd-select-text-input']")).click();
-		    driver.findElement(By.xpath("//*[contains(text(),'CAN')]")).click();
-		    driver.findElement(By.xpath("//input[@placeholder='yyyy-mm-dd']")).sendKeys("2022-04-25");
-		    driver.findElement(By.xpath("//textarea")).sendKeys("work from home");
-		    Thread.sleep(1000);
-		    driver.findElement(By.xpath("//button[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']")).click();
-		    Thread.sleep(1000);
+		    driver.findElement(By.linkText("Leave")).click();//Clicking on the leave in dashboard
+		    driver.findElement(By.linkText("Apply")).click();//Click on the apply inside the leave function
+		    driver.findElement(By.xpath("//div[@class='oxd-select-text-input']")).click(); 
+		    driver.findElement(By.xpath("//*[contains(text(),'CAN')]")).click();  //Entering the fields
+		    driver.findElement(By.xpath("//input[@placeholder='yyyy-mm-dd']")).sendKeys("2022-04-25"); //Entering the fields
+		    driver.findElement(By.xpath("//textarea")).sendKeys("work from home"); //Entering the fields
+		    Thread.sleep(1000);//Adding the thread dealy
+		    driver.findElement(By.xpath("//button[@class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']")).click();//clicking on submit button for leave apply
+		    Thread.sleep(1000);//Adding the thread dealy
 	}
 	
 	@Then("search in admin by username")
 	public void search_in_admin(String userName)
 	{
-		    driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
-			driver.findElement(By.xpath("//div[2]/input")).sendKeys(userName);
-			driver.findElement(By.xpath("//button[@type='submit']")).click();
+		    driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);//Adding the dealy
+			driver.findElement(By.xpath("//div[2]/input")).sendKeys(userName); //Entering the username in admin field
+			driver.findElement(By.xpath("//button[@type='submit']")).click(); //Click on submit
 	}
 	
 	@Then("search in admin by username and empid")
 	public void search_in_admin(String userName,String empname)
 	{
-		driver.findElement(By.xpath("//div[2]/input")).click();
-		driver.findElement(By.xpath("//div[2]/input")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE),userName);
-		driver.findElement(By.xpath("//input[@placeholder='Type for hints...']")).sendKeys(empname);
-		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		driver.findElement(By.xpath("//div[2]/input")).click(); //clicking on the username field
+		driver.findElement(By.xpath("//div[2]/input")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE),userName);//clearing the default name and adding the new username
+		driver.findElement(By.xpath("//input[@placeholder='Type for hints...']")).sendKeys(empname);//Enter the employee name
+		driver.findElement(By.xpath("//button[@type='submit']")).click();//clicking on submit button
 	}
 	
 	

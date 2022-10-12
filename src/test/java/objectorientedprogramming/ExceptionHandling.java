@@ -4,19 +4,28 @@ public class ExceptionHandling {
 
 	public static void main(String[] args) {
 		
+		int result[]=new int[10]; //initializing the array
+		int i = 11;  //giving array bound error
 		try
 		{
-			int a=10;
-			int b=0;
-			int result=a/b;
-			System.out.println(result);
+			
+			result[i]=10/0; // Arithmatic error
+			System.out.println(result[i]); //print the result
 			
 		}
-		catch(ArithmeticException e )
+		catch(ArrayIndexOutOfBoundsException e) //If Array Index Out Of Bounds Exception,this method will be called
+		{
+			System.out.println("Cannot store the in this index");
+		}
+		catch(ArithmeticException e )// If Arithmetic Exception is there, then this method will be called
 		{
 			System.out.println("Cannot devide by zero..please enter different number");
 		}
+		// If we have two catch then it will print one at a time
 
 	}
 
 }
+//We have both exception together..but it will print only arithmatic error
+
+
